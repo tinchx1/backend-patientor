@@ -28,6 +28,7 @@ patientsRouter.post('/', (req, res) => {
   }
 })
 patientsRouter.post('/:id/entries', (req, res) => {
+  console.log(req.body)
   const newEntry = utils.toNewEntry(req.body)
   const patient = patientsService.getPatient(req.params.id)
   if (patient === null || patient === undefined) {
